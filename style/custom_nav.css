@@ -1,0 +1,11 @@
+#navbars {
+	top: 100%;
+}
+
+#show-hide-menu:hover > #NavMenu {
+	display: inline-block;
+}
+
+#show-hide-menu:hover > #navbars {
+	display: block;
+}

@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docoritzu</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./libs/swipperjs/swiper-bundle.css">
+    <link rel="stylesheet" href="./style/style.min.css">
+    <link rel="stylesheet" href="./style/custom_nav.css">
+    
+</head>
+<body class="font-sans relative bg-gray-100 overflow-x-hidden">
+    <!-- NAV Section -->
+    <nav class="w-full h-14 xl:h-16 fixed top-0 inset-x-0 z-20 bg-blue-500 px-6 md:px-12 flex items-center justify-between">
+        <div class="h-full w-full sm:w-auto flex items-center justify-between sm:justify-center">
+            <a href="index.html">
+                <img class="w-48 h-10" src="./asset/logo-hartono.png" alt="logo"/>
+            </a>
+
+            <button id="show-hide-menu" class="relative sm:mx-8 h-full w-8 focus:outline-none flex justify-center items-center text-white cursor-pointer">
+             <i class="material-icons text-4xl ">menu</i>  
+                    <ul id="navbars" class="absolute md:left-0 hidden">
+                         <li class="text-base"><a href="#" class="text-left py-2 px-2 w-48 font-semibold bg-blue-500 hover:text-yellow-500 hover:bg-white inline-block">Menu 1</a></li>
+                         <li class="text-base"><a href="#" class="text-left py-2 px-2 w-48 font-semibold bg-blue-500 hover:text-yellow-500 hover:bg-white inline-block">Menu 2</a></li>
+                         <li class="text-base"><a href="#" class="text-left py-2 px-2 w-48 font-semibold bg-blue-500 hover:text-yellow-500 hover:bg-white inline-block">Menu 3</a></li>
+                         <li class="text-base"><a href="#" class="text-left py-2 px-2 w-48 font-semibold bg-blue-500 hover:text-yellow-500 hover:bg-white inline-block">Menu 4</a></li>
+                    </ul>    
+            </button>
+           
+            <div class="flex items-center hidden md:inline-block w-96 relative">
+                <input class="w-full px-2 no-underline h-8 xl:h-9 rounded-sm text-base outline-none" type="text" placeholder="Search"/>
+                <span class="material-icons text-3xl right-0 text-gray-400 absolute mx-0.5">search</span>
+            </div>                       
+        </div>
+
+        <div class="relative flex items-center hidden h-full sm:block sm:flex">
+            <a class="inline-block h-8 w-12 mx-1 relative flex justify-center items-center" href="#">
+               <span class="material-icons text-3xl text-white "> shopping_cart </span>     
+               <span class="inline-block absolute w-5 h-5 top-0 left-0 text-center rounded-full text-sm text-white bg-red-500">0</span>           
+            </a>
+
+            <button id="dropdown-profile" class="inline-block flex mx-2 justify-center items-center focus:outline-none">
+               <span class="material-icons text-3xl text-white mx-0.5"> person </span>                
+            </button>
+
+            <div class="profile-modal hidden absolute top-100 w-56 p-3 bg-white right-0 border-2 rounded">
+                <ul>
+                    <li class="block"><a href="#" class="px-2 rounded font-semibold text-blue-500 hover:bg-blue-500 hover:text-white py-1 w-full block">Pesanan</a></li>
+                    <li class="block"><a href="#" class="px-2 rounded font-semibold text-blue-500 hover:bg-blue-500 hover:text-white py-1 w-full inline-block">Perbandingan Produk</a></li>
+                    <li class="block"><a href="#" class="px-2 rounded font-semibold text-blue-500 hover:bg-blue-500 hover:text-white py-1 w-full inline-block">Wish list</a></li>
+                    <li class="block"><a href="#" class="px-2 rounded font-semibold text-blue-500 hover:bg-blue-500 hover:text-white py-1 w-full inline-block">Hadiah Saya</a></li>
+                    <li class="block"><a href="#" class="px-2 rounded font-semibold text-blue-500 hover:bg-blue-500 hover:text-white py-1 w-full inline-block">Product Offline Communication</a></li>
+                </ul>
+                <hr class="my-3"/>
+                <div class="flex flex-col w-full">
+                    <button id="btnOpenModalMasuk"  class="w-full focus:outline-none inline-block bg-yellow-400 font-semibold text-blue-600 py-1">Masuk</button>
+                    <button id="btnOpenModalRegister" class="w-full focus:outline-none inline-block border-2 border-blue-600 font-semibold text-blue-600 py-1 mt-2">Daftar</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN Content -->
+    <main class="px-4 md:px-12 pt-20 h-auto pb-1.5">
+        <div class="w-full h-auto bg-white p-4">
+
+            <div class="grid grid-cols-12 gap-2 w-full overflow-hidden h-auto">
+                <div class="col-span-12 lg:col-span-9">
+                    <div class="swiper-container swiper-container-hero h-56 lg:h-88 xl:h-96">
+                        <div class="swiper-wrapper swiper-wrapper-hero">
+                          <div class="swiper-slide">
+                              <a class="w-full h-full block relative" href="#">
+                                <img class="w-full h-full block absolute" src="./asset/banner-hero/hero-ban-1.png" alt="">
+                              </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <a class="w-full h-full block relative" href="#">
+                                <img class="w-full h-full block absolute" src="./asset/banner-hero/hero-ban-2.jpg" alt="">
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <a class="w-full h-full block relative" href="#">
+                                <img class="w-full h-full block absolute" src="./asset/banner-hero/hero-ban-3.jpg" alt="ii">
+                            </a>
+                          </div>
+                          <div class="swiper-slide">
+                            <a class="w-full h-full block relative" href="#">
+                                <img class="w-full h-full block absolute" src="./asset/banner-hero/hero-ban-4.jpg" alt="333">
+                            </a>
+                          </div>
+                        </div>
+                         <!-- Add Arrows -->
+                        <div class="swiper-button-next">
+                            <span class="material-icons text-xs text-gray-100">
+                                arrow_forward_ios
+                            </span>
+                        </div>
+                        <div class="swiper-button-prev">
+                            <span class="material-icons text-xs text-gray-100">
+                                arrow_back_ios
+                            </span>
+                        </div>
+                    </div>   
+                </div>
+
+                <div class="col-span-0 hidden lg:inline-block lg:col-span-3">
+                    <div class="flex flex-col">
+                        <div class="w-full border-b-2 border-white">
+                            <img class="" src="./asset/banner-hero/banner-top-right-1.jpg" alt="">
+                        </div>
+                        <div class="w-full border-t-2 border-white">
+                            <img class="" src="./asset/banner-hero/banner-top-right-2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 gap-3 px-2 py-4 xl:px-4 xl:py-4 items-center mt-8 h-auto bg-yellow-500">
+                <a class="inline-block lg:col-span-3 col-span-6 sm:col-span-6 " href="#">
+                    <img class="w-full" src="./asset/banner-hero/Banner-home-st-1.jpg" alt="">
+                </a>
+                <a class="inline-block lg:col-span-3 col-span-6 sm:col-span-6 " href="#">
+                    <img class="w-full" src="./asset/banner-hero/Banner-home-st-2.jpg" alt="">
+                </a>
+                <a class="inline-block lg:col-span-3 col-span-6 sm:col-span-6 " href="#">
+                    <img class="w-full" src="./asset/banner-hero/Banner-home-st-3.jpg" alt="">
+                </a>
+                <a class="inline-block lg:col-span-3 col-span-6 sm:col-span-6 " href="#">
+                    <img class="w-full" src="./asset/banner-hero/Banner-home-st-4.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="grid grid-cols-12 mt-6 py-5 bg-cover h-auto" style="background: linear-gradient(to right, #00d2ff, #928dab);">
+                <div class="col-span-0 hidden md:inline-block md:col-span-3 h-full w-full">
+                    <div class="flex items-center justify-center h-full w-full">
+                        <img class="w-auto h-auto pr-3" src="./asset/bg-list-item/produk-terbaru_1.png" alt="">
+                    </div>
+                </div>
+
+                <div class="col-span-12 md:col-span-9 flex my-4 flex-col w-auto">
+                    <div class="flex justify-between mx-3 md:mx-0">
+                        <h3 class="text-xl text-white font-semibold tracking-wider">HANDPHONE</h3>
+                        <a class="text-sm mr-3 text-white inline-block" href="#">Lihat Selengkapnya ></a>
+                    </div>
+                    <div class="mt-4">
+                        <div class="swiper-container swiper-container-product px-2 md:px-0">
+                            <div class="swiper-wrapper">
+
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                               
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <!-- <div class="swiper-pagination"></div> -->
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next p-4 bg-gray-500 rounded-full">
+                                <span class="material-icons text-gray-100 ">
+                                    arrow_forward_ios
+                                </span>
+                            </div>
+                            <div class="swiper-button-prev p-4 bg-gray-500 rounded-full ">
+                                <span class="material-icons text-gray-100 ml-3">
+                                    arrow_back_ios
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 mt-6 py-5 bg-cover h-auto" style="background: linear-gradient(to right, #8360c3, #2ebf91);">
+                <div class="col-span-0 hidden md:inline-block md:col-span-3 h-full w-full ">
+                    <div class="flex items-center justify-center h-full w-full">
+                         <img class="w-auto h-auto pr-3" src="./asset/bg-list-item/produk-terbaru_2.png" alt="">
+                    </div>
+                </div>
+
+                <div class="col-span-12 md:col-span-9 flex my-4 flex-col w-auto">
+                    <div class="flex justify-between  mx-3 md:mx-0">
+                        <h3 class="text-xl text-white font-semibold tracking-wider">REFRIGERATOR</h3>
+                        <a class="text-sm mr-3 text-white inline-block" href="#">Lihat Selengkapnya ></a>
+                    </div>
+                    <div class="mt-4">
+                        <div class="swiper-container swiper-container-product px-2 md:px-0">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                               
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <!-- <div class="swiper-pagination"></div> -->
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next p-4 bg-gray-500 rounded-full">
+                                <span class="material-icons text-gray-100 ">
+                                    arrow_forward_ios
+                                </span>
+                            </div>
+                            <div class="swiper-button-prev p-4 bg-gray-500 rounded-full ">
+                                <span class="material-icons text-gray-100 ml-3">
+                                    arrow_back_ios
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 mt-6 py-5 bg-cover h-auto" style="background: linear-gradient(to right, #00b09b, #96c93d);">
+                <div class="col-span-0 hidden md:inline-block md:col-span-3 h-full w-full">
+                    <div class="flex items-center justify-center h-full w-full">
+                       <img class="w-auto h-auto pr-3" src="./asset/bg-list-item/produk-terbaru_3.png" alt=""> 
+                    </div>
+                </div>
+
+                <div class="col-span-12 md:col-span-9 flex my-4 flex-col w-auto">
+                    <div class="flex justify-between mx-3 md:mx-0">
+                        <h3 class="text-xl text-white font-semibold tracking-wider">LAPTOP</h3>
+                        <a class="text-sm mr-3 text-white inline-block" href="#">Lihat Selengkapnya ></a>
+                    </div>
+                    <div class="mt-4">
+                        <div class="swiper-container swiper-container-product px-2 md:px-0">
+                            <div class="swiper-wrapper">
+
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                               
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <!-- <div class="swiper-pagination"></div> -->
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next p-4 bg-gray-500 rounded-full">
+                                <span class="material-icons text-gray-100 ">
+                                    arrow_forward_ios
+                                </span>
+                            </div>
+                            <div class="swiper-button-prev p-4 bg-gray-500 rounded-full ">
+                                <span class="material-icons text-gray-100 ml-3">
+                                    arrow_back_ios
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 mt-6 py-5 bg-cover h-auto" style="background: linear-gradient(to right, #e53935, #e35d5b);">
+                <div class="col-span-0 hidden md:inline-block md:col-span-3 h-full w-full">
+                    <div class="flex items-center justify-center h-full w-full">
+                        <img class="w-auto h-auto pr-3" src="./asset/bg-list-item/produk-terbaru_1.png" alt="">
+                    </div>
+                </div>
+
+                <div class="col-span-12 md:col-span-9 flex my-4 flex-col w-auto">
+                    <div class="flex justify-between mx-3 md:mx-0">
+                        <h3 class="text-xl text-white font-semibold tracking-wider">TELEVISION</h3>
+                        <a class="text-sm mr-3 text-white inline-block" href="#">Lihat Selengkapnya ></a>
+                    </div>
+                    <div class="mt-4">
+                        <div class="swiper-container swiper-container-product px-2 md:px-0">
+                            <div class="swiper-wrapper">
+
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                               
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <!-- <div class="swiper-pagination"></div> -->
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next p-4 bg-gray-500 rounded-full">
+                                <span class="material-icons text-gray-100 ">
+                                    arrow_forward_ios
+                                </span>
+                            </div>
+                            <div class="swiper-button-prev p-4 bg-gray-500 rounded-full ">
+                                <span class="material-icons text-gray-100 ml-3">
+                                    arrow_back_ios
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 mt-6 py-5 bg-cover h-auto" style="background: linear-gradient(to right, #ffb75e, #ed8f03);">
+                <div class="col-span-0 hidden md:inline-block md:col-span-3 h-full w-full">
+                    <div class="flex items-center justify-center h-full w-full">
+                        <img class="w-auto h-auto pr-3" src="./asset/bg-list-item/produk-terbaru_1.png" alt="">
+                    </div>
+                </div>
+
+                <div class="col-span-12 md:col-span-9 flex my-4 flex-col w-auto">
+                    <div class="flex justify-between mx-3 md:mx-0">
+                        <h3 class="text-xl text-white font-semibold tracking-wider">STOVE</h3>
+                        <a class="text-sm mr-3 text-white inline-block" href="#">Lihat Selengkapnya ></a>
+                    </div>
+                    <div class="mt-4">
+                        <div class="swiper-container swiper-container-product px-2 md:px-0">
+                            <div class="swiper-wrapper">
+
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                               
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./detail.html">
+                                        <div class="bg-white">
+                                            <img class="h-56 w-full" src="./asset/product/product_section_img_1.jpg" alt="awwkwk">
+                                            <div class="flex flex-col justify-center mx-2">
+                                            <h3 class="text-xxxxxs mt-3 text-gray-600">SAMSUNG SIDE BY SIDE REFRIGERATOR</h3>
+                                            <span class="text-xxxxs text-blue-500 my-4 font-bold">Rp 4.670.000</span>
+                                            </div>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <!-- <div class="swiper-pagination"></div> -->
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next p-4 bg-gray-500 rounded-full">
+                                <span class="material-icons text-gray-100 ">
+                                    arrow_forward_ios
+                                </span>
+                            </div>
+                            <div class="swiper-button-prev p-4 bg-gray-500 rounded-full ">
+                                <span class="material-icons text-gray-100 ml-3">
+                                    arrow_back_ios
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer class="mt-8 bg-white px-12 xl:px-24 py-16">
+        <div class="flex justify-between flex-wrap">
+            <div class="mt-8 sm:mt-4 sm:mx-2">
+                <h3 class="text-xl font-semibold text-blue-500">Hartono</h3>
+                <div class="flex flex-col mt-2">
+                    <a class="inline-block text-gray-500 hover:text-blue-600" href="#">Informasi Perusahaan</a>
+                    <a class="inline-block text-gray-500 hover:text-blue-600" href="#">karir</a>
+                    <a class="inline-block text-gray-500 hover:text-blue-600" href="#">Lokasi Toko dan Service Center</a>
+                    <a class="inline-block text-gray-500 hover:text-blue-600" href="#">Syarat dan Kententuan</a>
+                    <a class="inline-block text-gray-500 hover:text-blue-600" href="#">Sitemap</a>
+                </div>
+            </div>         
+            
+            <div class="mt-8 sm:mt-4 sm:mx-2">
+                <h3 class="text-xl font-semibold text-blue-500">Informasi</h3>
+                <div class="flex flex-col mt-2">
+                    <a class="inline-block text-gray-500 hover:text-blue-600" href="#">Keuntungan My HPC</a>
+                    <a class="inline-block text-gray-500 hover:text-blue-600" href="#">Garansi Resmi</a>
+                    <a class="inline-block text-gray-500 hover:text-blue-600" href="#">Garansi Eksternal</a>
+                    <a class="inline-block text-gray-500 hover:text-blue-600" href="#">Corporate Account</a>
+                    <a class="inline-block text-gray-500 hover:text-blue-600" href="#">Click and Collect</a>
+                </div>
+            </div>     
+
+            <div class="mt-8 sm:mt-4 sm:mx-2">
+                <h3 class="text-xl font-semibold text-blue-500">Customer Care</h3>
+                <div class="flex flex-col mt-2">
+                    <a class="inline-block text-gray-500 hover:text-blue-600" href="#"><span class="material-icons text-sm">call</span> 031-7321212</a>
+                    <a class="inline-block text-gray-500 hover:text-blue-600" href="#"><span class="material-icons text-sm mr-2">message</span>031-7321212</a>
+                    <a class="inline-block text-gray-500 hover:text-blue-600" href="#"><span class="material-icons text-sm mr-2">mail_outline</span>Info@zapplerepair.com</a>
+                    <a class="inline-block text-gray-500 hover:text-blue-600" href="#">Cara Belanja</a>
+                    <a class="inline-block text-gray-500 hover:text-blue-600" href="#">Metode Pembayaran</a>
+                </div>
+            </div>     
+
+            <div class="mt-8 sm:mt-4 sm:mx-2">
+                <h3 class="text-xl font-semibold text-blue-500">Ikuti Kami</h3>
+                <div class="flex my-3">
+                    <img class="w-12 mx-2" src="./asset/social-media/FB-Logo.jpg" alt="">
+                    <img class="w-12 mx-2" src="./asset/social-media/Instagram-Logo.jpg" alt="">
+                </div>
+                <h3 class="text-xl mt-5 font-semibold text-blue-500">Unduh Sekarang</h3>
+                <div class="flex my-3">
+                    <img class="w-24 mx-2" src="./asset/social-media/google-play-badge.png" alt="">
+                    <img class="w-24 mx-2" src="./asset/social-media/appstorebadge.png" alt="">
+                </div>
+                <h3 class="text-xl mt-5 font-semibold text-blue-500">Keamanan Transaksi</h3>
+                <div class=" my-3">
+                    <img class="w-56" src="./asset/social-media/My-Hartono-NEW-030321.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BG Black Blurr -->
+    <div id="NavMenu" class="hidden absolute bg-black bg-opacity-50 z-10 h-full inset-0">
+                
+    </div>
+
+    <!-- Modal Login -->
+    <div id="Modal-Masuk" class="absolute hidden bg-black bg-opacity-50 z-30 h-full inset-0">
+        <div class="h-screen w-full flex justify-center items-center">
+            <div class="bg-white w-88">
+                <div class="flex justify-between w-full py-6 h-10 items-center px-4 bg-blue-500">
+                    <h3 class="text-xl text-white">Masuk</h3> 
+                    
+                    <button id="btn-close-modal-login" class="focus:outline-none">
+                        <i class="material-icons text-base mt-2 text-white">
+                            close
+                        </i>
+                    </button>
+                </div>
+                <div class="w-full px-4">
+                    <form>
+                        <div class="w-full flex-col flex my-3">
+                            <label for="email-login">E-mail <span class="text-red-600">*</span></label>
+                            <input class="mt-1 py-1 px-2 rounded focus:outline-none border" placeholder="write email" type="email" name="email-login" id="email-login"/>                    
+                        </div>
+                        <div class="w-full flex-col flex my-3">
+                            <label for="Password-login">Password <span class="text-red-600">*</span></label>
+                            <input class="mt-1 py-1 px-2 rounded focus:outline-none border" placeholder="write password" type="password" name="Password-login" id="Password-login"/>                    
+                        </div>
+                        <span class="block text-sm text-center my-4"><a href="#" class="text-blue-400 hover:text-blue-600">Syarat dan Ketentuan</a> serta <a href="#" class="text-blue-400 hover:text-blue-600">Kebijakan Privasi.</a></span>
+
+                        <div class="flex mt-6 w-full justify-between">
+                            <label for="remember">
+                                <input type="checkbox" name="remember me" id="remember"/>
+                                <span class="text-sm">Remember Me</span>
+                            </label> 
+                            
+                            <div class="flex flex-col">
+                                <a href="#" class="inline-block text-sm font-semibold text-blue-500 hover:text-yellow-500">Lupa Password</a>
+                                <a href="#" class="inline-block text-sm text-blue-500 hover:text-yellow-500">Kirim ulang verifikasi</a>
+                            </div>
+                        </div>
+
+                        <button class="w-full bg-yellow-500 text-blue-500 py-1 mt-4 font-semibold" type="submit">
+                            Masuk
+                        </button>
+
+                        <hr class="my-5"/>
+
+                        <div class="w-full text-right mb-3">
+                            <a class="text-blue-500 hover:text-yellow-500" href="#">Belum Punya Akun? Daftar</a>
+                        </div>
+                    </form>                      
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Register -->
+    <div id="Modal-Register" class="absolute hidden bg-black bg-opacity-50 z-30 h-full inset-0">
+        <div class="h-screen w-full flex justify-center items-center">
+            <div class="bg-white pb-6 w-96">
+                <div class="flex justify-between w-full py-6 h-10 items-center px-4 bg-blue-500">
+                    <h3 class="text-xl text-white">Daftar</h3> 
+                    
+                    <button id="btn-close-modal-register" class="focus:outline-none">
+                        <i class="material-icons text-base mt-2 text-white">
+                            close
+                        </i>
+                    </button>
+                </div>
+
+                <div class="w-full px-4">
+                    <form>
+                        <div class="w-full flex-col flex my-3">
+                            <label for="email-login" class="text-gray-800">E-mail <span class="text-red-600">*</span></label>
+                            <input class="mt-1 py-1 px-2 rounded focus:outline-none border" placeholder="write email" type="email" name="email-login" id="email-login"/>                    
+                        </div>
+                        <div class="w-full flex-col flex my-3">
+                            <label for="Password-login" class="text-gray-800">Password <span class="text-red-600">*</span></label>
+                            <input class="mt-1 py-1 px-2 rounded focus:outline-none border" placeholder="write password" type="password" name="Password-login" id="Password-login"/>                    
+                        </div>
+                        <div class="w-full flex-col flex my-3">
+                            <label for="Password-login-konfirmasi" class="text-gray-800">Konfirmasi Password <span class="text-red-600">*</span></label>
+                            <input class="mt-1 py-1 px-2 rounded focus:outline-none border" placeholder="write confirm password" type="password" name="Password-login" id="Password-login-konfirmasi"/>                    
+                        </div>
+                        <div class="w-full flex-col flex my-3">
+                            <label for="Birthday" class="text-gray-800">Birthday </label>
+                            <input class="mt-1 py-1 px-2 rounded focus:outline-none border" placeholder="write confirm password" type="date" name="Password-login" id="Birthday"/>                    
+                        </div>
+                        <div class="w-full flex-col flex my-3">
+                            <label for="KTP" class="text-gray-800">Password <span class="text-red-600">*</span></label>
+                            <input class="mt-1 py-1 px-2 rounded focus:outline-none border" type="number" name="KTP" id="KTP"/>                    
+                        </div>  
+
+                        <span class="block text-sm text-center my-4">Dengan mendaftar, saya menyetujui<a href="#" class="text-blue-400 hover:text-blue-600">Syarat dan Ketentuan</a> serta <a href="#" class="text-blue-400 hover:text-blue-600">Kebijakan Privasi.</a></span>
+
+                        <button class="w-full bg-yellow-500 text-blue-500 py-1 mt-4 font-semibold" type="submit">
+                            Daftar
+                        </button>
+                    </form>                      
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./libs/swipperjs/swiper-bundle.js"></script>
+    <script src="./js/swiper-index.js"></script>
+    <script src="./js/script-index.js"></script>
+</body>
+</html>
